@@ -1,0 +1,64 @@
+#myBtn
+{
+	display: none; /* Oculto por defecto */
+	position: fixed; /* Posición fija */
+	bottom: 20px; /* Colocar el botón al final de la página */
+	right: 30px; /* Colocar el botón hacia la derecha */
+	z-index: 99; /* Asegurarse de que no se superpone */
+	border: none; /* Quitar bordes */
+	outline: none; /* Quitar contorno */
+	background-color: red; /* Color del fondo */
+	color: white; /* Color del texto */
+	cursor: pointer; /* Añadir un mouse pointer cuando se pase por encima */
+	padding: 15px; /* Relleno */
+	border-radius: 10px; /* Redondeo del borde */
+	font-size: 18px; /* Aumentamos tamaño de la fuente */
+	width: 50px;
+	height: 50px
+}
+
+#myBtn_2
+{
+	position: fixed;
+	bottom: 27px;
+	right: 37px;
+	width: 35px;
+	height: 35px;
+}
+
+#ID_ryan
+{
+	border: 4px solid #04B404;
+	border-radius: 15px;
+}
+
+#ID_martian
+{
+	border: 4px solid #04B404;
+	border-radius: 15px;
+}
+
+#ID_bengasi
+{
+	border: 4px solid #04B404;
+	border-radius: 15px;
+}
+
+#ID_stalingrado
+{
+	border: 4px solid #04B404;
+	border-radius: 15px;
+}
+
+#ID_francotirador
+{
+	border: 4px solid #04B404;
+	border-radius: 15px;
+}
+
+.titulo
+{
+	padding-left: 1em;
+	font-size: 20px;
+	list-style-type: none;
+}

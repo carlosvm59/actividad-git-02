@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<div id="meta_web">
+			<meta charset="utf-8">
+			<meta name="description" content="Formulario de prueba">
+			<meta name="keywords" content="Formulario">
+		</div>
+		<div id="titulo_web">
+			<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+			<link rel="manifest" href="img/favicon/site.webmanifest">
+			<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+			<link rel="shortcut icon" href="img/favicon/favicon.ico">
+			<meta name="msapplication-TileColor" content="#da532c">
+			<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+			<meta name="theme-color" content="#ffffff">
+			<title>Información sobre el producto</title>
+		</div>
+		<div id="recursos_externos">
+			<link rel="stylesheet" type="text/css" href="formulario.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" src="formulario.js"></script>
+			<script src="formulario.js"></script>
+		</div>
+		<button onclick="Arriba()" id="myBtn" title="Ir arriba" class="boton">
+			<img src="img/misc/up_arrow.png" id="myBtn_2">
+		</button>
+	</head>
+	
+	<body>
+		<header>
+			<h3>Información sobre el producto</h3>
+		</header>
+		
+		<fieldset>
+			<legend>Datos básicos</legend>
+			
+			<div id="DIVnombre">
+				Nombre
+				<br>
+				<input type="text" name="nombre" size="50">
+			</div>
+			
+			<br>
+			
+			<div id="DIVdescripcion">
+				Descripción
+				<br>
+				<textarea type="text" name="descripcion" cols="40" rows="5"></textarea>
+			</div>
+			
+			<br>
+			
+			<div id="DIVfoto">
+				Foto &nbsp;<input type="file" name="foto">
+			</div>
+			
+			<br>
+			
+			<div id="DIVcontador">
+				<input type="checkbox" name="contador"> Añadir contador de visitas
+			</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Datos económicos</legend>
+			
+			<div id="DIVprecio">
+				Precio <input type="text" name="precio" size="3"> €
+			
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				
+				Impuestos
+				<select name="impuestos">
+					<option value="4">4 %</option>
+					<option value="7">7 %</option>
+					<option value="16">16 %</option>
+					<option value="25">25 %</option>
+				</select>
+			</div>
+			
+			<br>
+			
+			<div id="DIVpromocion">
+				Promoción
+				<br>
+				<input type="radio" name="promocion" checked="checked"> Ninguno
+				<br>
+				<input type="radio" name="promocion"> Transporte gratuito
+				<br>
+				<input type="radio" name="promocion"> Descuento 5 %
+			</div>
+		</fieldset>
+	</body>
+
+</html>

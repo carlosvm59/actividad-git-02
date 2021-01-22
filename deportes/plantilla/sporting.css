@@ -1,0 +1,72 @@
+#myBtn
+{
+	display: none; /* Oculto por defecto */
+	position: fixed; /* Posición fija */
+	bottom: 20px; /* Colocar el botón al final de la página */
+	right: 30px; /* Colocar el botón hacia la derecha */
+	z-index: 99; /* Asegurarse de que no se superpone */
+	border: none; /* Quitar bordes */
+	outline: none; /* Quitar contorno */
+	background-color: red; /* Color del fondo */
+	color: white; /* Color del texto */
+	cursor: pointer; /* Añadir un mouse pointer cuando se pase por encima */
+	padding: 15px; /* Relleno */
+	border-radius: 10px; /* Redondeo del borde */
+	font-size: 18px; /* Aumentamos tamaño de la fuente */
+	width: 50px;
+	height: 50px
+}
+
+#myBtn_2
+{
+	position: fixed;
+	bottom: 27px;
+	right: 37px;
+	width: 35px;
+	height: 35px;
+}
+
+#DIVplantilla
+{
+    float:left;
+	width: 58%;
+	border: solid;
+}
+
+#DIVfotos
+{
+    width: 500px;
+    overflow: auto;
+	float: left;
+	border: solid;
+}
+
+.nombre_jugador
+{
+	text-align: left;
+}
+
+.porteros
+{
+	background-color: #FE9A2E;
+}
+
+.defensas
+{
+	background-color: #D7DF01;
+}
+
+.medios
+{
+	background-color: #04B404;
+}
+
+.delanteros
+{
+	background-color: #58FAF4;
+}
+
+tr:hover
+{
+	background-color: #f5f5f5;
+}

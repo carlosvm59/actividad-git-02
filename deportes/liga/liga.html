@@ -1,0 +1,3239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<div id="meta_web">
+			<meta charset="utf-8">
+			<meta name="description" content="Temporada de LaLiga 1|2|3">
+			<meta name="keywords" content="LaLiga 1|2|3, Fútbol">
+		</div>
+		<div id="titulo_web">
+			<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+			<link rel="manifest" href="img/favicon/site.webmanifest">
+			<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+			<link rel="shortcut icon" href="img/favicon/favicon.ico">
+			<meta name="msapplication-TileColor" content="#da532c">
+			<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+			<meta name="theme-color" content="#ffffff">
+			<title>LaLiga 1|2|3</title>
+		</div>
+		<div id="recursos_externos">
+			<link rel="stylesheet" type="text/css" href="liga.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" src="liga.js"></script>
+			<script src="liga.js"></script>
+		</div>
+		<button onclick="Arriba()" id="myBtn" title="Ir arriba" class="boton">
+			<img src="img/misc/up_arrow.png" id="myBtn_2">
+		</button>
+	</head>
+	
+	<body style="font-family:Calibri">
+		
+		<div id="DIVpre_clasificacion">
+			<fieldset class="simulador_partidos">
+				<legend><b>Simulador de partidos</b></legend>
+				
+				<select id="selector_local" onchange="ElegirEquipos();">
+					<option value="0" id="selector_local_nulo"> --- </option>
+					<option value="1" style="display:block" id="selector_local_equipo_1">Málaga CF</option>
+					<option value="2" style="display:block" id="selector_local_equipo_2">Granada CF</option>
+					<option value="3" style="display:block" id="selector_local_equipo_3">Deportivo</option>
+					<option value="4" style="display:block" id="selector_local_equipo_4">Alcorcón</option>
+					<option value="5" style="display:block" id="selector_local_equipo_5">UD Las Palmas</option>
+					<option value="6" style="display:block" id="selector_local_equipo_6">Albacete</option>
+					<option value="7" style="display:block" id="selector_local_equipo_7">RCD Mallorca</option>
+					<option value="8" style="display:block" id="selector_local_equipo_8">Oviedo</option>
+					<option value="9" style="display:block" id="selector_local_equipo_9">Almería</option>
+					<option value="10" style="display:block" id="selector_local_equipo_10">Real Sporting</option>
+					<option value="11" style="display:block" id="selector_local_equipo_11">Elche CF</option>
+					<option value="12" style="display:block" id="selector_local_equipo_12">Osasuna</option>
+					<option value="13" style="display:block" id="selector_local_equipo_13">Numancia</option>
+					<option value="14" style="display:block" id="selector_local_equipo_14">Rayo Majadahonda</option>
+					<option value="15" style="display:block" id="selector_local_equipo_15">CD Lugo</option>
+					<option value="16" style="display:block" id="selector_local_equipo_16">Tenerife</option>
+					<option value="17" style="display:block" id="selector_local_equipo_17">Reus Deportiu</option>
+					<option value="18" style="display:block" id="selector_local_equipo_18">Zaragoza</option>
+					<option value="19" style="display:block" id="selector_local_equipo_19">Cádiz</option>
+					<option value="20" style="display:block" id="selector_local_equipo_20">Extremadura</option>
+					<option value="21" style="display:block" id="selector_local_equipo_21">Nástic</option>
+					<option value="22" style="display:block" id="selector_local_equipo_22">Córdoba</option>
+				</select>
+				<input type="text" id="marcados_local" size="1">
+				<input type="text" id="marcados_visitante" size="1">
+				<select id="selector_visitante" onchange="ElegirEquipos();">
+					<option value="0" id="selector_visitante_nulo"> --- </option>
+					<option value="1" style="display:block" id="selector_visitante_equipo_1">Málaga CF</option>
+					<option value="2" style="display:block" id="selector_visitante_equipo_2">Granada CF</option>
+					<option value="3" style="display:block" id="selector_visitante_equipo_3">Deportivo</option>
+					<option value="4" style="display:block" id="selector_visitante_equipo_4">Alcorcón</option>
+					<option value="5" style="display:block" id="selector_visitante_equipo_5">UD Las Palmas</option>
+					<option value="6" style="display:block" id="selector_visitante_equipo_6">Albacete</option>
+					<option value="7" style="display:block" id="selector_visitante_equipo_7">RCD Mallorca</option>
+					<option value="8" style="display:block" id="selector_visitante_equipo_8">Oviedo</option>
+					<option value="9" style="display:block" id="selector_visitante_equipo_9">Almería</option>
+					<option value="10" style="display:block" id="selector_visitante_equipo_10">Real Sporting</option>
+					<option value="11" style="display:block" id="selector_visitante_equipo_11">Elche CF</option>
+					<option value="12" style="display:block" id="selector_visitante_equipo_12">Osasuna</option>
+					<option value="13" style="display:block" id="selector_visitante_equipo_13">Numancia</option>
+					<option value="14" style="display:block" id="selector_visitante_equipo_14">Rayo Majadahonda</option>
+					<option value="15" style="display:block" id="selector_visitante_equipo_15">CD Lugo</option>
+					<option value="16" style="display:block" id="selector_visitante_equipo_16">Tenerife</option>
+					<option value="17" style="display:block" id="selector_visitante_equipo_17">Reus Deportiu</option>
+					<option value="18" style="display:block" id="selector_visitante_equipo_18">Zaragoza</option>
+					<option value="19" style="display:block" id="selector_visitante_equipo_19">Cádiz</option>
+					<option value="20" style="display:block" id="selector_visitante_equipo_20">Extremadura</option>
+					<option value="21" style="display:block" id="selector_visitante_equipo_21">Nástic</option>
+					<option value="22" style="display:block" id="selector_visitante_equipo_22">Córdoba</option>
+				</select>
+				
+				<br><br>
+				
+				<button id="jugar_partido" style="display:block;" onclick="JugarPartido()">Jugar Partido</button>
+				<span id="error_relleno" class="mensaje_error">¡Se deben rellenar ambos campos!</span>
+				<span id="error_selector" class="mensaje_error">¡Se deben seleccionar diferentes equipos!</span>
+				<span id="error_tope" class="mensaje_error">¡Se han jugado todos los partidos de la temporada!</span>
+				<br>
+				<button id="ordenar_tabla" onclick="OrdenarTabla()">Ordenar Tabla</button>
+			</fieldset>
+			
+			<br>
+			
+			<marquee behavior="alternate" direction="right">
+				<h1><img src="img/misc/liga.png" width="200" height="47"></h1>
+			</marquee>
+			
+			<div id="DIVselector" align="center">
+				Categoría
+				<select id="selector" onchange="Desplegable();">
+					<option value="1">Clasificación</option>
+					<option value="2">Partidos</option>
+				</select>
+			</div>
+			
+		</div>
+		
+		<br>
+		
+		<div id="DIVclasificacion" align="center" style="display:block;">
+			<div class="DIVclasificacion_posiciones">
+				<table class="posiciones" id="posiciones_liga123">
+					<tr>
+						<th>POS</th>
+					</tr>
+					<tr class="fila_ascenso">
+						<td>1</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_ascenso">
+						<td>2</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_promocion">
+						<td>3</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_promocion">
+						<td>4</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_promocion">
+						<td>5</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_promocion">
+						<td>6</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_azul">
+						<td>7</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_blanca">
+						<td>8</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_azul">
+						<td>9</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_blanca">
+						<td>10</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_azul">
+						<td>11</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_blanca">
+						<td>12</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_azul">
+						<td>13</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_blanca">
+						<td>14</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_azul">
+						<td>15</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_blanca">
+						<td>16</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_azul">
+						<td>17</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_blanca">
+						<td>18</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_descenso">
+						<td>19</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_descenso">
+						<td>20</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_descenso">
+						<td>21</td>	<!-- Posición -->
+					</tr>
+					<tr class="fila_descenso">
+						<td>22</td>	<!-- Posición -->
+					</tr>
+				</table>
+			</div>
+			<div class="DIVclasificacion_tabla">
+				<table class="tabla" id="liga123">
+					<tr>
+						<th>EQUIPO</th>
+						<th>JUG</th>
+						<th>VIC</th>
+						<th>EMP</th>
+						<th>DER</th>
+						<th>GF</th>
+						<th>GC</th>
+						<th>DG</th>
+						<th>PTS</th>
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_1">&nbsp;&nbsp;&nbsp;<img src="img/teams/malaga.png" class="escudo_equipo">&nbsp; <span id="id_equipo_1">Málaga CF</span></td>
+						<td id="jugados_1">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_1">8</td>	<!-- Victorias -->
+						<td id="empates_1">1</td>	<!-- Empates -->
+						<td id="derrotas_1">2</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_1">14</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_1">6</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_1">8</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_1">25</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_2">&nbsp;&nbsp;&nbsp;<img src="img/teams/granada.png" class="escudo_equipo">&nbsp; <span id="id_equipo_2">Granada CF</span></td>
+						<td id="jugados_2">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_2">7</td>	<!-- Victorias -->
+						<td id="empates_2">2</td>	<!-- Empates -->
+						<td id="derrotas_2">2</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_2">18</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_2">8</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_2">10</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_2">25</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_3">&nbsp;&nbsp;&nbsp;<img src="img/teams/deportivo.png" class="escudo_equipo">&nbsp; <span id="id_equipo_3">Deportivo</span></td>
+						<td id="jugados_3">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_3">6</td>	<!-- Victorias -->
+						<td id="empates_3">4</td>	<!-- Empates -->
+						<td id="derrotas_3">1</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_3">18</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_3">8</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_3">10</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_3">22</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_4">&nbsp;&nbsp;&nbsp;<img src="img/teams/alcorcon.png" class="escudo_equipo">&nbsp; <span id="id_equipo_4">Alcorcón</span></td>
+						<td id="jugados_4">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_4">6</td>	<!-- Victorias -->
+						<td id="empates_4">3</td>	<!-- Empates -->
+						<td id="derrotas_4">2</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_4">13</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_4">6</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_4">7</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_4">21</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_5">&nbsp;&nbsp;&nbsp;<img src="img/teams/palmas.png" class="escudo_equipo">&nbsp; <span id="id_equipo_5">UD Las Palmas</span></td>
+						<td id="jugados_5">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_5">5</td>	<!-- Victorias -->
+						<td id="empates_5">4</td>	<!-- Empates -->
+						<td id="derrotas_5">2</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_5">16</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_5">9</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_5">7</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_5">19</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_6">&nbsp;&nbsp;&nbsp;<img src="img/teams/albacete.png" class="escudo_equipo">&nbsp; <span id="id_equipo_6">Albacete</span></td>
+						<td id="jugados_6">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_6">4</td>	<!-- Victorias -->
+						<td id="empates_6">5</td>	<!-- Empates -->
+						<td id="derrotas_6">2</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_6">17</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_6">12</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_6">5</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_6">17</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_7">&nbsp;&nbsp;&nbsp;<img src="img/teams/mallorca.png" class="escudo_equipo">&nbsp; <span id="id_equipo_7">RCD Mallorca</span></td>
+						<td id="jugados_7">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_7">4</td>	<!-- Victorias -->
+						<td id="empates_7">4</td>	<!-- Empates -->
+						<td id="derrotas_7">3</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_7">13</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_7">11</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_7">2</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_7">16</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_8">&nbsp;&nbsp;&nbsp;<img src="img/teams/oviedo.png" class="escudo_equipo">&nbsp; <span id="id_equipo_8">Oviedo</span></td>
+						<td id="jugados_8">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_8">4</td>	<!-- Victorias -->
+						<td id="empates_8">3</td>	<!-- Empates -->
+						<td id="derrotas_8">4</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_8">13</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_8">15</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_8">-2</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_8">15</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_9">&nbsp;&nbsp;&nbsp;<img src="img/teams/almeria.png" class="escudo_equipo">&nbsp; <span id="id_equipo_9">Almería</span></td>
+						<td id="jugados_9">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_9">4</td>	<!-- Victorias -->
+						<td id="empates_9">2</td>	<!-- Empates -->
+						<td id="derrotas_9">5</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_9">12</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_9">10</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_9">2</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_9">14</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_10">&nbsp;&nbsp;&nbsp;<img src="img/teams/sporting.png" class="escudo_equipo">&nbsp; <span id="id_equipo_10">Real Sporting</span></td>
+						<td id="jugados_10">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_10">3</td>	<!-- Victorias -->
+						<td id="empates_10">5</td>	<!-- Empates -->
+						<td id="derrotas_10">3</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_10">9</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_10">7</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_10">2</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_10">14</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_11">&nbsp;&nbsp;&nbsp;<img src="img/teams/elche.png" class="escudo_equipo">&nbsp; <span id="id_equipo_11">Elche CF</span></td>
+						<td id="jugados_11">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_11">3</td>	<!-- Victorias -->
+						<td id="empates_11">5</td>	<!-- Empates -->
+						<td id="derrotas_11">3</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_11">11</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_11">13</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_11">-2</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_11">14</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_12">&nbsp;&nbsp;&nbsp;<img src="img/teams/osasuna.png" class="escudo_equipo">&nbsp; <span id="id_equipo_12">Osasuna</span></td>
+						<td id="jugados_12">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_12">3</td>	<!-- Victorias -->
+						<td id="empates_12">4</td>	<!-- Empates -->
+						<td id="derrotas_12">4</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_12">11</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_12">11</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_12">0</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_12">13</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_13">&nbsp;&nbsp;&nbsp;<img src="img/teams/numancia.png" class="escudo_equipo">&nbsp; <span id="id_equipo_13">Numancia</span></td>
+						<td id="jugados_13">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_13">3</td>	<!-- Victorias -->
+						<td id="empates_13">4</td>	<!-- Empates -->
+						<td id="derrotas_13">4</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_13">10</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_13">15</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_13">-5</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_13">13</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_14">&nbsp;&nbsp;&nbsp;<img src="img/teams/rayo.png" class="escudo_equipo">&nbsp; <span id="id_equipo_14">Rayo Majadahonda</span></td>
+						<td id="jugados_14">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_14">4</td>	<!-- Victorias -->
+						<td id="empates_14">1</td>	<!-- Empates -->
+						<td id="derrotas_14">6</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_14">9</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_14">15</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_14">-6</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_14">13</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_15">&nbsp;&nbsp;&nbsp;<img src="img/teams/lugo.png" class="escudo_equipo">&nbsp; <span id="id_equipo_15">CD Lugo</span></td>
+						<td id="jugados_15">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_15">3</td>	<!-- Victorias -->
+						<td id="empates_15">3</td>	<!-- Empates -->
+						<td id="derrotas_15">5</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_15">11</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_15">13</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_15">-2</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_15">12</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_16">&nbsp;&nbsp;&nbsp;<img src="img/teams/tenerife.png" class="escudo_equipo">&nbsp; <span id="id_equipo_16">Tenerife</span></td>
+						<td id="jugados_16">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_16">2</td>	<!-- Victorias -->
+						<td id="empates_16">6</td>	<!-- Empates -->
+						<td id="derrotas_16">3</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_16">11</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_16">14</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_16">-3</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_16">12</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_17">&nbsp;&nbsp;&nbsp;<img src="img/teams/reus.png" class="escudo_equipo">&nbsp; <span id="id_equipo_17">Reus Deportiu</span></td>
+						<td id="jugados_17">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_17">3</td>	<!-- Victorias -->
+						<td id="empates_17">3</td>	<!-- Empates -->
+						<td id="derrotas_17">5</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_17">9</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_17">13</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_17">-4</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_17">12</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_18">&nbsp;&nbsp;&nbsp;<img src="img/teams/zaragoza.png" class="escudo_equipo">&nbsp; <span id="id_equipo_18">Zaragoza</span></td>
+						<td id="jugados_18">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_18">2</td>	<!-- Victorias -->
+						<td id="empates_18">5</td>	<!-- Empates -->
+						<td id="derrotas_18">4</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_18">12</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_18">13</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_18">-1</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_18">11</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_19">&nbsp;&nbsp;&nbsp;<img src="img/teams/cadiz.png" class="escudo_equipo">&nbsp; <span id="id_equipo_19">Cádiz</span></td>
+						<td id="jugados_19">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_19">2</td>	<!-- Victorias -->
+						<td id="empates_19">5</td>	<!-- Empates -->
+						<td id="derrotas_19">4</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_19">8</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_19">11</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_19">-3</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_19">11</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_20">&nbsp;&nbsp;&nbsp;<img src="img/teams/extremadura.png" class="escudo_equipo">&nbsp; <span id="id_equipo_20">Extremadura</span></td>
+						<td id="jugados_20">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_20">2</td>	<!-- Victorias -->
+						<td id="empates_20">3</td>	<!-- Empates -->
+						<td id="derrotas_20">6</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_20">13</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_20">17</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_20">-4</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_20">9</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_21">&nbsp;&nbsp;&nbsp;<img src="img/teams/gimnastic.png" class="escudo_equipo">&nbsp; <span id="id_equipo_21">Nástic</span></td>
+						<td id="jugados_21">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_21">2</td>	<!-- Victorias -->
+						<td id="empates_21">3</td>	<!-- Empates -->
+						<td id="derrotas_21">6</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_21">8</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_21">18</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_21">-10</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_21">9</td>	<!-- Puntos -->
+					</tr>
+					<tr>
+						<td class="nombre_equipo" id="equipo_22">&nbsp;&nbsp;&nbsp;<img src="img/teams/cordoba.png" class="escudo_equipo">&nbsp; <span id="id_equipo_22">Córdoba</span></td>
+						<td id="jugados_22">11</td>	<!-- Partidos jugados -->
+						<td id="victorias_22">1</td>	<!-- Victorias -->
+						<td id="empates_22">5</td>	<!-- Empates -->
+						<td id="derrotas_22">5</td>	<!-- Derrotas -->
+						<td><span type="text" id="golesFavor_22">11</span></td>	<!-- Goles a favor -->
+						<td><span type="text" id="golesContra_22">22</span></td>	<!-- Goles en contra -->
+						<td><span id="golesDiferencia_22">-11</span></td>	<!-- Diferencia de goles -->
+						<td class="puntos" id="puntos_22">8</td>	<!-- Puntos -->
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div id="DIVpartidos" align="center" style="display:none;">
+			
+			<div id="DIVselector_grupo_jornada" align="center">
+				Grupos de Jornadas
+				<select id="selector_grupo_jornada" onchange="SelectorGrupoJornada();">
+					<option value="0" selected="1"> --- </option>
+					<option value="1">Jornadas 1-11</option>
+					<option value="2">Jornadas 12-22</option>
+					<option value="3">Jornadas 23-33</option>
+					<option value="4">Jornadas 34-42</option>
+				</select>
+			</div>
+			
+			<br>
+			
+			<div id="DIVgrupojornadas1_11" align="center" style="display:none;">
+			
+				<div id="DIVselector_jornada_1" align="center">
+					Jornada
+					<select id="selector_jornada_1" onchange="SelectorJornada1();">
+						<option value="0" selected="1"> --- </option>
+						<option value="1">Jornada 1</option>
+						<option value="2">Jornada 2</option>
+						<option value="3">Jornada 3</option>
+						<option value="4">Jornada 4</option>
+						<option value="5">Jornada 5</option>
+						<option value="6">Jornada 6</option>
+						<option value="7">Jornada 7</option>
+						<option value="8">Jornada 8</option>
+						<option value="9">Jornada 9</option>
+						<option value="10">Jornada 10</option>
+						<option value="11">Jornada 11</option>
+					</select>
+				</div>
+				
+				<br>
+				
+				<div id="DIVjornada1" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 1</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_1"></span> - <span id="goles_visitante_1_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_1"></span> - <span id="goles_visitante_2_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_1"></span> - <span id="goles_visitante_3_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_1"></span> - <span id="goles_visitante_4_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_1"></span> - <span id="goles_visitante_5_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_1"></span> - <span id="goles_visitante_6_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_1"></span> - <span id="goles_visitante_7_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_1"></span> - <span id="goles_visitante_8_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_1"></span> - <span id="goles_visitante_9_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_1"></span> - <span id="goles_visitante_10_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_1"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_1"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_1"></span> - <span id="goles_visitante_11_jornada_1"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_1"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada2" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 2</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_2"></span> - <span id="goles_visitante_1_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_2"></span> - <span id="goles_visitante_2_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_2"></span> - <span id="goles_visitante_3_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_2"></span> - <span id="goles_visitante_4_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_2"></span> - <span id="goles_visitante_5_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_2"></span> - <span id="goles_visitante_6_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_2"></span> - <span id="goles_visitante_7_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_2"></span> - <span id="goles_visitante_8_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_2"></span> - <span id="goles_visitante_9_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_2"></span> - <span id="goles_visitante_10_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_2"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_2"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_2"></span> - <span id="goles_visitante_11_jornada_2"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_2"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada3" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 3</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_3"></span> - <span id="goles_visitante_1_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_3"></span> - <span id="goles_visitante_2_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_3"></span> - <span id="goles_visitante_3_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_3"></span> - <span id="goles_visitante_4_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_3"></span> - <span id="goles_visitante_5_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_3"></span> - <span id="goles_visitante_6_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_3"></span> - <span id="goles_visitante_7_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_3"></span> - <span id="goles_visitante_8_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_3"></span> - <span id="goles_visitante_9_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_3"></span> - <span id="goles_visitante_10_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_3"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_3"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_3"></span> - <span id="goles_visitante_11_jornada_3"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_3"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada4" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 4</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_4"></span> - <span id="goles_visitante_1_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_4"></span> - <span id="goles_visitante_2_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_4"></span> - <span id="goles_visitante_3_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_4"></span> - <span id="goles_visitante_4_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_4"></span> - <span id="goles_visitante_5_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_4"></span> - <span id="goles_visitante_6_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_4"></span> - <span id="goles_visitante_7_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_4"></span> - <span id="goles_visitante_8_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_4"></span> - <span id="goles_visitante_9_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_4"></span> - <span id="goles_visitante_10_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_4"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_4"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_4"></span> - <span id="goles_visitante_11_jornada_4"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_4"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada5" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 5</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_5"></span> - <span id="goles_visitante_1_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_5"></span> - <span id="goles_visitante_2_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_5"></span> - <span id="goles_visitante_3_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_5"></span> - <span id="goles_visitante_4_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_5"></span> - <span id="goles_visitante_5_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_5"></span> - <span id="goles_visitante_6_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_5"></span> - <span id="goles_visitante_7_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_5"></span> - <span id="goles_visitante_8_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_5"></span> - <span id="goles_visitante_9_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_5"></span> - <span id="goles_visitante_10_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_5"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_5"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_5"></span> - <span id="goles_visitante_11_jornada_5"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_5"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada6" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 6</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_6"></span> - <span id="goles_visitante_1_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_6"></span> - <span id="goles_visitante_2_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_6"></span> - <span id="goles_visitante_3_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_6"></span> - <span id="goles_visitante_4_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_6"></span> - <span id="goles_visitante_5_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_6"></span> - <span id="goles_visitante_6_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_6"></span> - <span id="goles_visitante_7_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_6"></span> - <span id="goles_visitante_8_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_6"></span> - <span id="goles_visitante_9_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_6"></span> - <span id="goles_visitante_10_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_6"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_6"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_6"></span> - <span id="goles_visitante_11_jornada_6"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_6"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada7" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 7</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_7"></span> - <span id="goles_visitante_1_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_7"></span> - <span id="goles_visitante_2_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_7"></span> - <span id="goles_visitante_3_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_7"></span> - <span id="goles_visitante_4_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_7"></span> - <span id="goles_visitante_5_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_7"></span> - <span id="goles_visitante_6_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_7"></span> - <span id="goles_visitante_7_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_7"></span> - <span id="goles_visitante_8_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_7"></span> - <span id="goles_visitante_9_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_7"></span> - <span id="goles_visitante_10_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_7"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_7"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_7"></span> - <span id="goles_visitante_11_jornada_7"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_7"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada8" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 8</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_8"></span> - <span id="goles_visitante_1_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_8"></span> - <span id="goles_visitante_2_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_8"></span> - <span id="goles_visitante_3_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_8"></span> - <span id="goles_visitante_4_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_8"></span> - <span id="goles_visitante_5_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_8"></span> - <span id="goles_visitante_6_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_8"></span> - <span id="goles_visitante_7_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_8"></span> - <span id="goles_visitante_8_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_8"></span> - <span id="goles_visitante_9_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_8"></span> - <span id="goles_visitante_10_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_8"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_8"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_8"></span> - <span id="goles_visitante_11_jornada_8"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_8"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada9" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 9</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_9"></span> - <span id="goles_visitante_1_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_9"></span> - <span id="goles_visitante_2_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_9"></span> - <span id="goles_visitante_3_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_9"></span> - <span id="goles_visitante_4_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_9"></span> - <span id="goles_visitante_5_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_9"></span> - <span id="goles_visitante_6_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_9"></span> - <span id="goles_visitante_7_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_9"></span> - <span id="goles_visitante_8_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_9"></span> - <span id="goles_visitante_9_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_9"></span> - <span id="goles_visitante_10_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_9"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_9"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_9"></span> - <span id="goles_visitante_11_jornada_9"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_9"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada10" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 10</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_10"></span> - <span id="goles_visitante_1_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_10"></span> - <span id="goles_visitante_2_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_10"></span> - <span id="goles_visitante_3_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_10"></span> - <span id="goles_visitante_4_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_10"></span> - <span id="goles_visitante_5_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_10"></span> - <span id="goles_visitante_6_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_10"></span> - <span id="goles_visitante_7_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_10"></span> - <span id="goles_visitante_8_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_10"></span> - <span id="goles_visitante_9_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_10"></span> - <span id="goles_visitante_10_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_10"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_10"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_10"></span> - <span id="goles_visitante_11_jornada_10"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_10"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada11" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 11</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_11"></span> - <span id="goles_visitante_1_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_11"></span> - <span id="goles_visitante_2_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_11"></span> - <span id="goles_visitante_3_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_11"></span> - <span id="goles_visitante_4_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_11"></span> - <span id="goles_visitante_5_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_11"></span> - <span id="goles_visitante_6_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_11"></span> - <span id="goles_visitante_7_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_11"></span> - <span id="goles_visitante_8_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_11"></span> - <span id="goles_visitante_9_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_11"></span> - <span id="goles_visitante_10_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_11"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_11"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_11"></span> - <span id="goles_visitante_11_jornada_11"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_11"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div id="DIVgrupojornadas12_22" align="center" style="display:none;">
+			
+				<div id="DIVselector_jornada_2" align="center">
+					Jornada
+					<select id="selector_jornada_2" onchange="SelectorJornada2();">
+						<option value="0" selected="1"> --- </option>
+						<option value="12">Jornada 12</option>
+						<option value="13">Jornada 13</option>
+						<option value="14">Jornada 14</option>
+						<option value="15">Jornada 15</option>
+						<option value="16">Jornada 16</option>
+						<option value="17">Jornada 17</option>
+						<option value="18">Jornada 18</option>
+						<option value="19">Jornada 19</option>
+						<option value="20">Jornada 20</option>
+						<option value="21">Jornada 21</option>
+						<option value="22">Jornada 22</option>
+					</select>
+				</div>
+				
+				<br>
+				
+				<div id="DIVjornada12" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 12</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_12"></span> - <span id="goles_visitante_1_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_12"></span> - <span id="goles_visitante_2_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_12"></span> - <span id="goles_visitante_3_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_12"></span> - <span id="goles_visitante_4_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_12"></span> - <span id="goles_visitante_5_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_12"></span> - <span id="goles_visitante_6_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_12"></span> - <span id="goles_visitante_7_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_12"></span> - <span id="goles_visitante_8_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_12"></span> - <span id="goles_visitante_9_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_12"></span> - <span id="goles_visitante_10_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_12"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_12"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_12"></span> - <span id="goles_visitante_11_jornada_12"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_12"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada13" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 13</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_13"></span> - <span id="goles_visitante_1_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_13"></span> - <span id="goles_visitante_2_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_13"></span> - <span id="goles_visitante_3_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_13"></span> - <span id="goles_visitante_4_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_13"></span> - <span id="goles_visitante_5_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_13"></span> - <span id="goles_visitante_6_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_13"></span> - <span id="goles_visitante_7_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_13"></span> - <span id="goles_visitante_8_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_13"></span> - <span id="goles_visitante_9_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_13"></span> - <span id="goles_visitante_10_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_13"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_13"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_13"></span> - <span id="goles_visitante_11_jornada_13"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_13"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada14" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 14</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_14"></span> - <span id="goles_visitante_1_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_14"></span> - <span id="goles_visitante_2_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_14"></span> - <span id="goles_visitante_3_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_14"></span> - <span id="goles_visitante_4_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_14"></span> - <span id="goles_visitante_5_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_14"></span> - <span id="goles_visitante_6_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_14"></span> - <span id="goles_visitante_7_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_14"></span> - <span id="goles_visitante_8_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_14"></span> - <span id="goles_visitante_9_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_14"></span> - <span id="goles_visitante_10_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_14"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_14"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_14"></span> - <span id="goles_visitante_11_jornada_14"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_14"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada15" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 15</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_15"></span> - <span id="goles_visitante_1_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_15"></span> - <span id="goles_visitante_2_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_15"></span> - <span id="goles_visitante_3_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_15"></span> - <span id="goles_visitante_4_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_15"></span> - <span id="goles_visitante_5_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_15"></span> - <span id="goles_visitante_6_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_15"></span> - <span id="goles_visitante_7_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_15"></span> - <span id="goles_visitante_8_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_15"></span> - <span id="goles_visitante_9_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_15"></span> - <span id="goles_visitante_10_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_15"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_15"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_15"></span> - <span id="goles_visitante_11_jornada_15"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_15"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada16" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 16</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_16"></span> - <span id="goles_visitante_1_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_16"></span> - <span id="goles_visitante_2_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_16"></span> - <span id="goles_visitante_3_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_16"></span> - <span id="goles_visitante_4_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_16"></span> - <span id="goles_visitante_5_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_16"></span> - <span id="goles_visitante_6_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_16"></span> - <span id="goles_visitante_7_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_16"></span> - <span id="goles_visitante_8_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_16"></span> - <span id="goles_visitante_9_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_16"></span> - <span id="goles_visitante_10_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_16"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_16"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_16"></span> - <span id="goles_visitante_11_jornada_16"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_16"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada17" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 17</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_17"></span> - <span id="goles_visitante_1_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_17"></span> - <span id="goles_visitante_2_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_17"></span> - <span id="goles_visitante_3_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_17"></span> - <span id="goles_visitante_4_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_17"></span> - <span id="goles_visitante_5_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_17"></span> - <span id="goles_visitante_6_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_17"></span> - <span id="goles_visitante_7_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_17"></span> - <span id="goles_visitante_8_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_17"></span> - <span id="goles_visitante_9_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_17"></span> - <span id="goles_visitante_10_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_17"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_17"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_17"></span> - <span id="goles_visitante_11_jornada_17"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_17"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada18" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 18</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_18"></span> - <span id="goles_visitante_1_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_18"></span> - <span id="goles_visitante_2_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_18"></span> - <span id="goles_visitante_3_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_18"></span> - <span id="goles_visitante_4_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_18"></span> - <span id="goles_visitante_5_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_18"></span> - <span id="goles_visitante_6_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_18"></span> - <span id="goles_visitante_7_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_18"></span> - <span id="goles_visitante_8_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_18"></span> - <span id="goles_visitante_9_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_18"></span> - <span id="goles_visitante_10_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_18"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_18"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_18"></span> - <span id="goles_visitante_11_jornada_18"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_18"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada19" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 19</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_19"></span> - <span id="goles_visitante_1_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_19"></span> - <span id="goles_visitante_2_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_19"></span> - <span id="goles_visitante_3_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_19"></span> - <span id="goles_visitante_4_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_19"></span> - <span id="goles_visitante_5_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_19"></span> - <span id="goles_visitante_6_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_19"></span> - <span id="goles_visitante_7_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_19"></span> - <span id="goles_visitante_8_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_19"></span> - <span id="goles_visitante_9_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_19"></span> - <span id="goles_visitante_10_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_19"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_19"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_19"></span> - <span id="goles_visitante_11_jornada_19"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_19"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada20" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 20</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_20"></span> - <span id="goles_visitante_1_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_20"></span> - <span id="goles_visitante_2_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_20"></span> - <span id="goles_visitante_3_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_20"></span> - <span id="goles_visitante_4_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_20"></span> - <span id="goles_visitante_5_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_20"></span> - <span id="goles_visitante_6_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_20"></span> - <span id="goles_visitante_7_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_20"></span> - <span id="goles_visitante_8_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_20"></span> - <span id="goles_visitante_9_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_20"></span> - <span id="goles_visitante_10_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_20"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_20"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_20"></span> - <span id="goles_visitante_11_jornada_20"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_20"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada21" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 21</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_21"></span> - <span id="goles_visitante_1_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_21"></span> - <span id="goles_visitante_2_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_21"></span> - <span id="goles_visitante_3_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_21"></span> - <span id="goles_visitante_4_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_21"></span> - <span id="goles_visitante_5_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_21"></span> - <span id="goles_visitante_6_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_21"></span> - <span id="goles_visitante_7_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_21"></span> - <span id="goles_visitante_8_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_21"></span> - <span id="goles_visitante_9_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_21"></span> - <span id="goles_visitante_10_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_21"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_21"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_21"></span> - <span id="goles_visitante_11_jornada_21"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_21"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada22" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 22</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_22"></span> - <span id="goles_visitante_1_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_22"></span> - <span id="goles_visitante_2_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_22"></span> - <span id="goles_visitante_3_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_22"></span> - <span id="goles_visitante_4_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_22"></span> - <span id="goles_visitante_5_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_22"></span> - <span id="goles_visitante_6_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_22"></span> - <span id="goles_visitante_7_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_22"></span> - <span id="goles_visitante_8_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_22"></span> - <span id="goles_visitante_9_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_22"></span> - <span id="goles_visitante_10_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_22"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_22"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_22"></span> - <span id="goles_visitante_11_jornada_22"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_22"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div id="DIVgrupojornadas23_33" align="center" style="display:none;">
+			
+				<div id="DIVselector_jornada_3" align="center">
+					Jornada
+					<select id="selector_jornada_3" onchange="SelectorJornada3();">
+						<option value="0" selected="1"> --- </option>
+						<option value="23">Jornada 23</option>
+						<option value="24">Jornada 24</option>
+						<option value="25">Jornada 25</option>
+						<option value="26">Jornada 26</option>
+						<option value="27">Jornada 27</option>
+						<option value="28">Jornada 28</option>
+						<option value="29">Jornada 29</option>
+						<option value="30">Jornada 30</option>
+						<option value="31">Jornada 31</option>
+						<option value="32">Jornada 32</option>
+						<option value="33">Jornada 33</option>
+					</select>
+				</div>
+				
+				<br>
+				
+				<div id="DIVjornada23" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 23</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_23"></span> - <span id="goles_visitante_1_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_23"></span> - <span id="goles_visitante_2_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_23"></span> - <span id="goles_visitante_3_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_23"></span> - <span id="goles_visitante_4_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_23"></span> - <span id="goles_visitante_5_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_23"></span> - <span id="goles_visitante_6_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_23"></span> - <span id="goles_visitante_7_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_23"></span> - <span id="goles_visitante_8_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_23"></span> - <span id="goles_visitante_9_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_23"></span> - <span id="goles_visitante_10_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_23"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_23"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_23"></span> - <span id="goles_visitante_11_jornada_23"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_23"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada24" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 24</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_24"></span> - <span id="goles_visitante_1_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_24"></span> - <span id="goles_visitante_2_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_24"></span> - <span id="goles_visitante_3_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_24"></span> - <span id="goles_visitante_4_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_24"></span> - <span id="goles_visitante_5_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_24"></span> - <span id="goles_visitante_6_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_24"></span> - <span id="goles_visitante_7_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_24"></span> - <span id="goles_visitante_8_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_24"></span> - <span id="goles_visitante_9_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_24"></span> - <span id="goles_visitante_10_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_24"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_24"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_24"></span> - <span id="goles_visitante_11_jornada_24"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_24"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada25" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 25</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_25"></span> - <span id="goles_visitante_1_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_25"></span> - <span id="goles_visitante_2_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_25"></span> - <span id="goles_visitante_3_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_25"></span> - <span id="goles_visitante_4_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_25"></span> - <span id="goles_visitante_5_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_25"></span> - <span id="goles_visitante_6_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_25"></span> - <span id="goles_visitante_7_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_25"></span> - <span id="goles_visitante_8_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_25"></span> - <span id="goles_visitante_9_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_25"></span> - <span id="goles_visitante_10_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_25"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_25"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_25"></span> - <span id="goles_visitante_11_jornada_25"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_25"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada26" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 26</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_26"></span> - <span id="goles_visitante_1_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_26"></span> - <span id="goles_visitante_2_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_26"></span> - <span id="goles_visitante_3_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_26"></span> - <span id="goles_visitante_4_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_26"></span> - <span id="goles_visitante_5_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_26"></span> - <span id="goles_visitante_6_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_26"></span> - <span id="goles_visitante_7_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_26"></span> - <span id="goles_visitante_8_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_26"></span> - <span id="goles_visitante_9_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_26"></span> - <span id="goles_visitante_10_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_26"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_26"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_26"></span> - <span id="goles_visitante_11_jornada_26"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_26"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada27" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 27</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_27"></span> - <span id="goles_visitante_1_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_27"></span> - <span id="goles_visitante_2_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_27"></span> - <span id="goles_visitante_3_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_27"></span> - <span id="goles_visitante_4_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_27"></span> - <span id="goles_visitante_5_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_27"></span> - <span id="goles_visitante_6_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_27"></span> - <span id="goles_visitante_7_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_27"></span> - <span id="goles_visitante_8_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_27"></span> - <span id="goles_visitante_9_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_27"></span> - <span id="goles_visitante_10_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_27"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_27"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_27"></span> - <span id="goles_visitante_11_jornada_27"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_27"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada28" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 28</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_28"></span> - <span id="goles_visitante_1_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_28"></span> - <span id="goles_visitante_2_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_28"></span> - <span id="goles_visitante_3_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_28"></span> - <span id="goles_visitante_4_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_28"></span> - <span id="goles_visitante_5_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_28"></span> - <span id="goles_visitante_6_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_28"></span> - <span id="goles_visitante_7_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_28"></span> - <span id="goles_visitante_8_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_28"></span> - <span id="goles_visitante_9_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_28"></span> - <span id="goles_visitante_10_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_28"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_28"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_28"></span> - <span id="goles_visitante_11_jornada_28"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_28"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada29" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 29</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_29"></span> - <span id="goles_visitante_1_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_29"></span> - <span id="goles_visitante_2_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_29"></span> - <span id="goles_visitante_3_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_29"></span> - <span id="goles_visitante_4_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_29"></span> - <span id="goles_visitante_5_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_29"></span> - <span id="goles_visitante_6_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_29"></span> - <span id="goles_visitante_7_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_29"></span> - <span id="goles_visitante_8_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_29"></span> - <span id="goles_visitante_9_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_29"></span> - <span id="goles_visitante_10_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_29"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_29"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_29"></span> - <span id="goles_visitante_11_jornada_29"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_29"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada30" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 30</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_30"></span> - <span id="goles_visitante_1_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_30"></span> - <span id="goles_visitante_2_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_30"></span> - <span id="goles_visitante_3_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_30"></span> - <span id="goles_visitante_4_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_30"></span> - <span id="goles_visitante_5_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_30"></span> - <span id="goles_visitante_6_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_30"></span> - <span id="goles_visitante_7_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_30"></span> - <span id="goles_visitante_8_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_30"></span> - <span id="goles_visitante_9_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_30"></span> - <span id="goles_visitante_10_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_30"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_30"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_30"></span> - <span id="goles_visitante_11_jornada_30"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_30"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada31" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 31</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_31"></span> - <span id="goles_visitante_1_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_31"></span> - <span id="goles_visitante_2_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_31"></span> - <span id="goles_visitante_3_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_31"></span> - <span id="goles_visitante_4_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_31"></span> - <span id="goles_visitante_5_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_31"></span> - <span id="goles_visitante_6_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_31"></span> - <span id="goles_visitante_7_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_31"></span> - <span id="goles_visitante_8_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_31"></span> - <span id="goles_visitante_9_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_31"></span> - <span id="goles_visitante_10_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_31"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_31"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_31"></span> - <span id="goles_visitante_11_jornada_31"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_31"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada32" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 32</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_32"></span> - <span id="goles_visitante_1_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_32"></span> - <span id="goles_visitante_2_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_32"></span> - <span id="goles_visitante_3_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_32"></span> - <span id="goles_visitante_4_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_32"></span> - <span id="goles_visitante_5_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_32"></span> - <span id="goles_visitante_6_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_32"></span> - <span id="goles_visitante_7_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_32"></span> - <span id="goles_visitante_8_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_32"></span> - <span id="goles_visitante_9_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_32"></span> - <span id="goles_visitante_10_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_32"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_32"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_32"></span> - <span id="goles_visitante_11_jornada_32"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_32"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada33" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 33</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_33"></span> - <span id="goles_visitante_1_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_33"></span> - <span id="goles_visitante_2_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_33"></span> - <span id="goles_visitante_3_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_33"></span> - <span id="goles_visitante_4_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_33"></span> - <span id="goles_visitante_5_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_33"></span> - <span id="goles_visitante_6_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_33"></span> - <span id="goles_visitante_7_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_33"></span> - <span id="goles_visitante_8_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_33"></span> - <span id="goles_visitante_9_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_33"></span> - <span id="goles_visitante_10_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_33"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_33"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_33"></span> - <span id="goles_visitante_11_jornada_33"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_33"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div id="DIVgrupojornadas34_42" align="center" style="display:none;"> <!-- Faltan las IDs --->
+			
+				<div id="DIVselector_jornada_4" align="center">
+					Jornada
+					<select id="selector_jornada_4" onchange="SelectorJornada4();">
+						<option value="0" selected="1"> --- </option>
+						<option value="34">Jornada 34</option>
+						<option value="35">Jornada 35</option>
+						<option value="36">Jornada 36</option>
+						<option value="37">Jornada 37</option>
+						<option value="38">Jornada 38</option>
+						<option value="39">Jornada 39</option>
+						<option value="40">Jornada 40</option>
+						<option value="41">Jornada 41</option>
+						<option value="42">Jornada 42</option>
+					</select>
+				</div>
+				
+				<br>
+				
+				<div id="DIVjornada34" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 34</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_34"></span> - <span id="goles_visitante_1_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_34"></span> - <span id="goles_visitante_2_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_34"></span> - <span id="goles_visitante_3_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_34"></span> - <span id="goles_visitante_4_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_34"></span> - <span id="goles_visitante_5_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_34"></span> - <span id="goles_visitante_6_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_34"></span> - <span id="goles_visitante_7_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_34"></span> - <span id="goles_visitante_8_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_34"></span> - <span id="goles_visitante_9_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_34"></span> - <span id="goles_visitante_10_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_34"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_34"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_34"></span> - <span id="goles_visitante_11_jornada_34"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_34"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada35" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 35</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_35"></span> - <span id="goles_visitante_1_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_35"></span> - <span id="goles_visitante_2_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_35"></span> - <span id="goles_visitante_3_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_35"></span> - <span id="goles_visitante_4_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_35"></span> - <span id="goles_visitante_5_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_35"></span> - <span id="goles_visitante_6_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_35"></span> - <span id="goles_visitante_7_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_35"></span> - <span id="goles_visitante_8_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_35"></span> - <span id="goles_visitante_9_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_35"></span> - <span id="goles_visitante_10_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_35"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_35"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_35"></span> - <span id="goles_visitante_11_jornada_35"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_35"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada36" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 36</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_36"></span> - <span id="goles_visitante_1_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_36"></span> - <span id="goles_visitante_2_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_36"></span> - <span id="goles_visitante_3_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_36"></span> - <span id="goles_visitante_4_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_36"></span> - <span id="goles_visitante_5_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_36"></span> - <span id="goles_visitante_6_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_36"></span> - <span id="goles_visitante_7_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_36"></span> - <span id="goles_visitante_8_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_36"></span> - <span id="goles_visitante_9_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_36"></span> - <span id="goles_visitante_10_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_36"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_36"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_36"></span> - <span id="goles_visitante_11_jornada_36"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_36"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada37" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 37</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_37"></span> - <span id="goles_visitante_1_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_37"></span> - <span id="goles_visitante_2_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_37"></span> - <span id="goles_visitante_3_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_37"></span> - <span id="goles_visitante_4_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_37"></span> - <span id="goles_visitante_5_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_37"></span> - <span id="goles_visitante_6_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_37"></span> - <span id="goles_visitante_7_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_37"></span> - <span id="goles_visitante_8_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_37"></span> - <span id="goles_visitante_9_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_37"></span> - <span id="goles_visitante_10_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_37"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_37"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_37"></span> - <span id="goles_visitante_11_jornada_37"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_37"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada38" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 38</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_38"></span> - <span id="goles_visitante_1_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_38"></span> - <span id="goles_visitante_2_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_38"></span> - <span id="goles_visitante_3_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_38"></span> - <span id="goles_visitante_4_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_38"></span> - <span id="goles_visitante_5_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_38"></span> - <span id="goles_visitante_6_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_38"></span> - <span id="goles_visitante_7_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_38"></span> - <span id="goles_visitante_8_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_38"></span> - <span id="goles_visitante_9_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_38"></span> - <span id="goles_visitante_10_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_38"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_38"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_38"></span> - <span id="goles_visitante_11_jornada_38"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_38"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada39" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 39</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_39"></span> - <span id="goles_visitante_1_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_39"></span> - <span id="goles_visitante_2_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_39"></span> - <span id="goles_visitante_3_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_39"></span> - <span id="goles_visitante_4_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_39"></span> - <span id="goles_visitante_5_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_39"></span> - <span id="goles_visitante_6_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_39"></span> - <span id="goles_visitante_7_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_39"></span> - <span id="goles_visitante_8_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_39"></span> - <span id="goles_visitante_9_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_39"></span> - <span id="goles_visitante_10_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_39"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_39"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_39"></span> - <span id="goles_visitante_11_jornada_39"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_39"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada40" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 40</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_40"></span> - <span id="goles_visitante_1_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_40"></span> - <span id="goles_visitante_2_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_40"></span> - <span id="goles_visitante_3_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_40"></span> - <span id="goles_visitante_4_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_40"></span> - <span id="goles_visitante_5_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_40"></span> - <span id="goles_visitante_6_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_40"></span> - <span id="goles_visitante_7_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_40"></span> - <span id="goles_visitante_8_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_40"></span> - <span id="goles_visitante_9_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_40"></span> - <span id="goles_visitante_10_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_40"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_40"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_40"></span> - <span id="goles_visitante_11_jornada_40"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_40"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada41" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 41</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_41"></span> - <span id="goles_visitante_1_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_41"></span> - <span id="goles_visitante_2_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_41"></span> - <span id="goles_visitante_3_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_41"></span> - <span id="goles_visitante_4_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_41"></span> - <span id="goles_visitante_5_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_41"></span> - <span id="goles_visitante_6_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_41"></span> - <span id="goles_visitante_7_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_41"></span> - <span id="goles_visitante_8_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_41"></span> - <span id="goles_visitante_9_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_41"></span> - <span id="goles_visitante_10_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_41"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_41"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_41"></span> - <span id="goles_visitante_11_jornada_41"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_41"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id="DIVjornada42" align="center" style="display:none;">
+					<table class="jornada">
+						<tr>
+							<th colspan="3">JORNADA 42</th>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_1_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_1_jornada_42"></span> - <span id="goles_visitante_1_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_1_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_2_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_2_jornada_42"></span> - <span id="goles_visitante_2_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_2_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_3_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_3_jornada_42"></span> - <span id="goles_visitante_3_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_3_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_4_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_4_jornada_42"></span> - <span id="goles_visitante_4_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_4_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_5_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_5_jornada_42"></span> - <span id="goles_visitante_5_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_5_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_6_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_6_jornada_42"></span> - <span id="goles_visitante_6_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_6_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_7_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_7_jornada_42"></span> - <span id="goles_visitante_7_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_7_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_8_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_8_jornada_42"></span> - <span id="goles_visitante_8_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_8_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_9_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_9_jornada_42"></span> - <span id="goles_visitante_9_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_9_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_10_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_10_jornada_42"></span> - <span id="goles_visitante_10_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_10_jornada_42"></span></td>
+						</tr>
+						<tr>
+							<td id="campo_equipo_local"><span id="equipo_local_11_jornada_42"></span>&nbsp;</td>
+							<td id="marcador"><span id="goles_local_11_jornada_42"></span> - <span id="goles_visitante_11_jornada_42"></span></td>
+							<td id="campo_equipo_visitante">&nbsp;<span id="equipo_visitante_11_jornada_42"></span></td>
+						</tr>
+					</table>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<footer>
+			<p><blockquote>Estos datos están obsoletos. Una versión actualizada se puede encontrar en <a href="https://www.resultados-futbol.com/segunda" target="_blank">Resultados de fútbol</a></blockquote></p>
+			
+			<span id="equipo_1b" align="left" style="display:none">Málaga CF &nbsp;<img src="img/teams/malaga.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_2b" align="left" style="display:none">Granada CF &nbsp;<img src="img/teams/granada.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_3b" align="left" style="display:none">Deportivo &nbsp;<img src="img/teams/deportivo.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_4b" align="left" style="display:none">Alcorcón &nbsp;<img src="img/teams/alcorcon.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_5b" align="left" style="display:none">UD Las Palmas &nbsp;<img src="img/teams/palmas.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_6b" align="left" style="display:none">Albacete &nbsp;<img src="img/teams/albacete.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_7b" align="left" style="display:none">RCD Mallorca &nbsp;<img src="img/teams/mallorca.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_8b" align="left" style="display:none">Oviedo &nbsp;<img src="img/teams/oviedo.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_9b" align="left" style="display:none">Almería &nbsp;<img src="img/teams/almeria.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_10b" align="left" style="display:none">Real Sporting &nbsp;<img src="img/teams/sporting.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_11b" align="left" style="display:none">Elche CF &nbsp;<img src="img/teams/elche.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_12b" align="left" style="display:none">Osasuna &nbsp;<img src="img/teams/osasuna.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_13b" align="left" style="display:none">Numancia &nbsp;<img src="img/teams/numancia.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_14b" align="left" style="display:none">Rayo Majadahonda &nbsp;<img src="img/teams/rayo.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_15b" align="left" style="display:none">CD Lugo &nbsp;<img src="img/teams/lugo.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_16b" align="left" style="display:none">Tenerife &nbsp;<img src="img/teams/tenerife.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_17b" align="left" style="display:none">Reus Deportiu &nbsp;<img src="img/teams/reus.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_18b" align="left" style="display:none">Zaragoza &nbsp;<img src="img/teams/zaragoza.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_19b" align="left" style="display:none">Cádiz &nbsp;<img src="img/teams/cadiz.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_20b" align="left" style="display:none">Extremadura &nbsp;<img src="img/teams/extremadura.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_21b" align="left" style="display:none">Nástic &nbsp;<img src="img/teams/gimnastic.png" class="escudo_equipo">&nbsp;</span>
+			<span id="equipo_22b" align="left" style="display:none">Córdoba &nbsp;<img src="img/teams/cordoba.png" class="escudo_equipo">&nbsp;</span>
+		</footer>
+		
+	</body>
+
+
+</html>
