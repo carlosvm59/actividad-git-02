@@ -1,3 +1,7 @@
+header > marquee {
+	color: green;
+}
+
 #myBtn
 {
 	display: none; /* Oculto por defecto */
