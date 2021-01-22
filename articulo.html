@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<div id="meta_web">
+			<meta charset="utf-8">
+			<meta name="description" content="Articulo">
+			<meta name="keywords" content="Articulo, Web">
+		</div>
+		<div id="titulo_web">
+			<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+			<link rel="manifest" href="img/favicon/site.webmanifest">
+			<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+			<link rel="shortcut icon" href="img/favicon/favicon.ico">
+			<meta name="msapplication-TileColor" content="#da532c">
+			<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+			<meta name="theme-color" content="#ffffff">
+			<title>Pagina de Articulo</title>
+		</div>
+		<div id="recursos_externos">
+			<link rel="stylesheet" type="text/css" href="index.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" src="index.js"></script>
+			<script src="index.js"></script>
+		</div>
+		<button onclick="Arriba()" id="myBtn" title="Ir arriba" class="boton">
+			<img src="img/misc/up_arrow.png" id="myBtn_2">
+		</button>
+	</head>
+	
+	<body style="font-family:Calibri">
+		<header>
+			<marquee behavior="alternate" direction="right">
+				<h1>Articulo</h1>
+			</marquee>
+		</header>
+		
+		<div id="DIVindice" align="left">
+			<fieldset class="fieldset">
+				<tr>
+					<td>
+						<ul>
+							<li><a href="peliculas/peliculas.html" target="_blank">Películas</a>&nbsp;&nbsp;<img src="img/misc/preview.png" width="20" height="20" onClick="Peliculas()"></li>
+							<br>
+							<img src="img/gif/peliculas.gif" width="104" height="92">
+							<br>
+							<br>
+							<li><a href="deportes/deportes.html" target="_blank">Deportes</a>&nbsp;&nbsp;<img src="img/misc/preview.png" width="20" height="20" onClick="Deportes()"></li>
+							<br>
+							<img src="img/gif/deportes.gif" width="100" height="100">
+							<br>
+							<br>
+							<li><a href="artico/artico.html" target="_blank">Ártico</a>&nbsp;&nbsp;<img src="img/misc/preview.png" width="20" height="20" onClick="Artico()"></li>
+							<br>
+							<img src="img/gif/artico.gif" width="150" height="62">
+							<br>
+							<br>
+							<li><a href="espacio/espacio.html" target="_blank">Exploración Espacial</a>&nbsp;&nbsp;<img src="img/misc/preview.png" width="20" height="20" onClick="Espacio()"></li>
+							<br>
+							<img src="img/gif/espacio.gif" width="150" height="120">
+							<br>
+							<br>
+							<li><a href="formulario/formulario.html" target="_blank">Formulario</a>&nbsp;&nbsp;<img src="img/misc/preview.png" width="20" height="20" onClick="Formulario()"></li>
+							<br>
+							<img src="img/gif/formulario.gif" width="150" height="62">
+							<br>
+						</ul>
+					</td>
+				</tr>
+			</fieldset>
+		</div>
+		
+		<div id="DIViframe" align="right">
+			<iframe id="visor_html" class="iframe" src="espacio/espacio.html"></iframe>
+		</div>
+	</body>
+
+</html>
